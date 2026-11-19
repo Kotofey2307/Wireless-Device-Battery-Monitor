@@ -10,7 +10,7 @@ namespace {
 const BrandStyle kBrands[] = {
     { Accent::None,         L"",             { 255, 255, 255 }, {   0,   0,   0 } },
     { Accent::Razer,        L"Razer",        {  68, 214,  44 }, {  22, 140,  20 } },  // #44D62C
-    { Accent::Logitech,     L"Logitech",     {   0, 184, 252 }, {   0, 120, 180 } },  // Logitech G #00B8FC
+    { Accent::Logitech,     L"Logitech",     { 255, 255, 255 }, {  40,  40,  40 } },  // white
     { Accent::SteelSeries,  L"SteelSeries",  { 255,  82,   0 }, { 204,  65,   0 } },  // #FF5200
     { Accent::Corsair,      L"Corsair",      { 245, 228,  26 }, { 150, 122,   0 } },  // yellow #F5E41A
     { Accent::HyperX,       L"HyperX",       { 232,  35,  63 }, { 200,  16,  46 } },  // #E31837
@@ -25,6 +25,7 @@ const BrandStyle kBrands[] = {
     { Accent::CoolerMaster, L"Cooler Master",{ 157, 107, 255 }, { 106,  43, 217 } },  // purple
     { Accent::Steam,        L"Steam",        {  26, 159, 255 }, {  11, 111, 191 } },  // #1A9FFF
     { Accent::Redragon,     L"Redragon",     { 230,   0,  18 }, { 192,   0,  15 } },  // #E60012
+    { Accent::Mchose,       L"MCHOSE",       { 255, 255, 255 }, {  40,  40,  40 } },  // white
 };
 
 std::wstring Lower(std::wstring s) {
@@ -63,6 +64,7 @@ const KeyRule kKeys[] = {
     { L"coolermaster:", Accent::CoolerMaster },
     { L"steam:", Accent::Steam },
     { L"redragon:", Accent::Redragon },
+    { L"mchose:", Accent::Mchose },
 };
 
 // Vendor ids that only one of these brands uses. Shared ones are left to the name check:
@@ -113,6 +115,7 @@ const NameRule kNames[] = {
     { L"cooler master", How::Contains, Accent::CoolerMaster }, { L"coolermaster", How::Contains, Accent::CoolerMaster },
     { L"steam controller", How::Contains, Accent::Steam },
     { L"redragon", How::Contains, Accent::Redragon },
+    { L"mchose", How::Contains, Accent::Mchose },
 };
 
 bool Matches(const std::wstring& n, const NameRule& r) {
